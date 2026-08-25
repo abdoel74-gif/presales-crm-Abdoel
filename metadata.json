@@ -1,0 +1,6 @@
+{
+  "name": "Presales Operating System & CRM",
+  "description": "Enterprise-grade Presales Operating System and CRM integrated platform with real-time pipeline tracking, technical sizing, BOQ/SOW generation, project handover, asset management, and WhatsApp gateway integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
