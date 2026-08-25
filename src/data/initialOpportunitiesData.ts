@@ -19,8 +19,8 @@ export const INITIAL_OPPORTUNITY_RECORDS: Opportunity[] = [
     assignedAeName: 'Rian Hidayat',
     assignedAeEmail: 'rian.hidayat@enterprise.com',
     assignedSaId: 'usr_sa_01',
-    assignedSaName: 'Adrian Pratama',
-    assignedSaEmail: 'adrian.pratama@enterprise.com',
+    assignedSaName: 'Abdoel',
+    assignedSaEmail: 'abdoel74@gmail.com',
     meddpiccScore: 75,
     meddpiccData: {
       metrics: '40% reduction in backup RPO/RTO downtime; IDR 4.2B annual opex savings in power/cooling.',
@@ -105,8 +105,8 @@ export const INITIAL_OPPORTUNITY_RECORDS: Opportunity[] = [
     assignedAeName: 'Budi Santoso',
     assignedAeEmail: 'budi.santoso@enterprise.com',
     assignedSaId: 'usr_sa_01',
-    assignedSaName: 'Adrian Pratama',
-    assignedSaEmail: 'adrian.pratama@enterprise.com',
+    assignedSaName: 'Abdoel',
+    assignedSaEmail: 'abdoel74@gmail.com',
     meddpiccScore: 50,
     meddpiccData: {
       metrics: 'Real-time telemetry ingestion from 350 PLC controllers; 99.999% edge uptime.',
@@ -148,8 +148,8 @@ export const INITIAL_OPPORTUNITY_RECORDS: Opportunity[] = [
     assignedAeName: 'Rian Hidayat',
     assignedAeEmail: 'rian.hidayat@enterprise.com',
     assignedSaId: 'usr_sa_01',
-    assignedSaName: 'Adrian Pratama',
-    assignedSaEmail: 'adrian.pratama@enterprise.com',
+    assignedSaName: 'Abdoel',
+    assignedSaEmail: 'abdoel74@gmail.com',
     meddpiccScore: 80,
     meddpiccData: {
       metrics: '350,000 sustained IOPS with <0.5ms latency during peak warehouse order dispatch.',
@@ -305,7 +305,7 @@ export const INITIAL_OPPORTUNITY_RECORDS: Opportunity[] = [
 ];
 
 export const SA_OPTIONS = [
-  { id: 'usr_sa_01', name: 'Adrian Pratama', email: 'adrian.pratama@enterprise.com', role: 'Principal Solutions Architect' },
+  { id: 'usr_sa_01', name: 'Abdoel', email: 'abdoel74@gmail.com', role: 'Principal Solutions Architect' },
   { id: 'usr_sa_02', name: 'Dimas Wicaksono', email: 'dimas.w@enterprise.com', role: 'Senior Cybersecurity Architect' },
   { id: 'usr_sa_03', name: 'Siti Rahmawati', email: 'siti.rahmawati@enterprise.com', role: 'Cloud & Infrastructure Architect' },
 ];

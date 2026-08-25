@@ -56,7 +56,7 @@ function MainAppContent() {
       status: newTaskPartial.status || ('In Architecture Analysis' as any),
       priority: newTaskPartial.priority || ('High (48h SLA)' as any),
       techDomain: newTaskPartial.techDomain || ['Cloud Infra'],
-      leadArchitect: profile?.name || 'Adrian Pratama',
+      leadArchitect: profile?.name || 'Abdoel',
       sizingWorkloadsCount: newTaskPartial.sizingWorkloadsCount || 10,
       boqMargin: newTaskPartial.boqMargin || 25,
       slaDueHours: newTaskPartial.slaDueHours || 48,
@@ -69,7 +69,7 @@ function MainAppContent() {
     // Dispatch a simulated WhatsApp confirmation alert
     const newAlert: WhatsAppNotification = {
       id: `wa_${Date.now()}`,
-      recipientName: `${profile?.name || 'Adrian Pratama'} (Solutions Architect)`,
+      recipientName: `${profile?.name || 'Abdoel'} (Solutions Architect)`,
       recipientPhone: '+62 812-3456-7890',
       type: 'STAGE_UPDATE',
       messagePreview: `📋 [NEW REQUEST] ${newTask.requestCode} created for ${newTask.accountName}. SLA due in ${newTask.slaDueHours}h.`,
@@ -309,8 +309,8 @@ function MainAppContent() {
         <Topbar
           currentUser={profile || {
             id: 'usr_default',
-            name: 'Adrian Pratama',
-            email: 'adrian.pratama@enterprise.com',
+            name: 'Abdoel',
+            email: 'abdoel74@gmail.com',
             role: currentRole,
             avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
             department: 'Principal Solutions Architect',

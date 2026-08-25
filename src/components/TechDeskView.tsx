@@ -553,7 +553,7 @@ export const TechDeskView: React.FC<TechDeskViewProps> = ({
 
                       {/* Assignee */}
                       <td className="py-3 px-4">
-                        <div className="font-medium text-slate-900">{t.assigneeName || 'Adrian Pratama'}</div>
+                        <div className="font-medium text-slate-900">{t.assigneeName || 'Abdoel'}</div>
                         <div className="text-[11px] text-indigo-600">{t.assigneeRole || 'Solutions Architect'}</div>
                       </td>
 

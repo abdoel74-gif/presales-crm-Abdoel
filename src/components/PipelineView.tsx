@@ -640,7 +640,7 @@ export const PipelineView: React.FC<PipelineViewProps> = ({
                             AE: {opp.assignedAeName || 'Rian Hidayat'}
                           </span>
                           <span className="text-[10px] text-slate-400 block">
-                            SA: {opp.assignedSaName || 'Adrian Pratama'}
+                            SA: {opp.assignedSaName || 'Abdoel'}
                           </span>
                         </td>
 

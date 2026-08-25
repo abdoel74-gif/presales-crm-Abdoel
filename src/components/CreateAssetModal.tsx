@@ -42,7 +42,7 @@ export const CreateAssetModal: React.FC<CreateAssetModalProps> = ({
   const [supportContractTier, setSupportContractTier] = useState('24x7 Mission Critical ProSupport');
   const [contractNumber, setContractNumber] = useState('');
   const [isLoaner, setIsLoaner] = useState(prefillIsLoaner);
-  const [borrowerEngineer, setBorrowerEngineer] = useState(currentProfile?.name || 'Adrian Pratama');
+  const [borrowerEngineer, setBorrowerEngineer] = useState(currentProfile?.name || 'Abdoel');
   const [borrowerPhone, setBorrowerPhone] = useState('+62 812-3456-7890');
   const [expectedReturnDate, setExpectedReturnDate] = useState(
     new Date(Date.now() + 14 * 86400000).toISOString().split('T')[0]

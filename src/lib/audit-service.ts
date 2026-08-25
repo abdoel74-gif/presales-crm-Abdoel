@@ -78,9 +78,9 @@ export async function logAuditAction(params: LogAuditParams): Promise<AuditLogEn
   const timestamp = new Date().toISOString();
   const id = `aud_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
   
-  const userId = params.userProfile?.id || params.userId || 'usr_adrian_001';
-  const userName = params.userProfile?.name || params.userName || 'Adrian Pratama';
-  const userEmail = params.userProfile?.email || params.userEmail || 'adrian.pratama@enterprise.co.id';
+  const userId = params.userProfile?.id || params.userId || 'usr_abdoel_001';
+  const userName = params.userProfile?.name || params.userName || 'Abdoel';
+  const userEmail = params.userProfile?.email || params.userEmail || 'abdoel74@gmail.com';
   const userRole = params.userProfile?.role || params.userRole || UserRole.SOLUTIONS_ARCHITECT;
   const ipAddress = params.ipAddress || '103.28.12.98';
   const userAgent = typeof navigator !== 'undefined' ? navigator.userAgent : 'Node.js Agent';

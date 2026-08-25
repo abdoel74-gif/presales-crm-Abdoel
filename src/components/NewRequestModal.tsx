@@ -33,7 +33,7 @@ export const NewRequestModal: React.FC<NewRequestModalProps> = ({
       status: PresalesStatus.IN_ANALYSIS,
       priority,
       techDomain: techDomain.split(',').map((s) => s.trim()),
-      leadArchitect: 'Adrian Pratama',
+      leadArchitect: 'Abdoel',
       sizingWorkloadsCount: 12,
       boqMargin: 25.0,
       slaDueHours: priority === PriorityLevel.URGENT ? 24 : 48,

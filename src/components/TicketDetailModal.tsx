@@ -97,7 +97,7 @@ export const TicketDetailModal: React.FC<TicketDetailModalProps> = ({
     if (onSendWhatsAppAlert && !isInternalNote && ticket.reporterPhone) {
       onSendWhatsAppAlert(
         ticket.reporterPhone,
-        `💬 [TICKET UPDATE] ${ticket.ticketNumber}: Engineer ${currentProfile?.name || 'Adrian Pratama'} posted a reply on "${ticket.title}".`
+        `💬 [TICKET UPDATE] ${ticket.ticketNumber}: Engineer ${currentProfile?.name || 'Abdoel'} posted a reply on "${ticket.title}".`
       );
     }
   };
@@ -244,7 +244,7 @@ export const TicketDetailModal: React.FC<TicketDetailModalProps> = ({
 
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
               <span className="text-[11px] font-medium text-slate-500 uppercase tracking-wider">Assigned Engineer</span>
-              <div className="font-bold text-slate-900 text-sm truncate">{ticket.assigneeName || 'Adrian Pratama'}</div>
+              <div className="font-bold text-slate-900 text-sm truncate">{ticket.assigneeName || 'Abdoel'}</div>
               <div className="text-xs text-indigo-600 font-medium">{ticket.assigneeRole || 'Solutions Architect'}</div>
             </div>
 

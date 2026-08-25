@@ -280,7 +280,7 @@ export const OpportunityDetailModal: React.FC<OpportunityDetailModalProps> = ({
           <div>
             <p className="text-[11px] font-semibold uppercase text-slate-400">Lead Architect (SA)</p>
             <p className="text-sm font-bold text-slate-800 truncate">
-              {opportunity.assignedSaName || 'Adrian Pratama'}
+              {opportunity.assignedSaName || 'Abdoel'}
             </p>
           </div>
         </div>
@@ -512,7 +512,7 @@ export const OpportunityDetailModal: React.FC<OpportunityDetailModalProps> = ({
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs space-y-1">
                   <div className="flex justify-between">
                     <span className="text-slate-500">Assigned Solutions Architect:</span>
-                    <span className="font-bold text-slate-800">{opportunity.assignedSaName || 'Adrian Pratama'}</span>
+                    <span className="font-bold text-slate-800">{opportunity.assignedSaName || 'Abdoel'}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-500">Estimated Target BOM Hardware:</span>

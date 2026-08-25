@@ -560,7 +560,7 @@ export const AccountDetailModal: React.FC<AccountDetailModalProps> = ({
                           </div>
                           <h4 className="text-xs font-bold text-slate-900">{opp.title}</h4>
                           <p className="text-[11px] text-slate-500">
-                            AE: {opp.assignedAeName || 'Rian Hidayat'} &bull; SA: {opp.assignedSaName || 'Adrian Pratama'} &bull; Target: {opp.targetCloseDate || 'Q4 2026'}
+                            AE: {opp.assignedAeName || 'Rian Hidayat'} &bull; SA: {opp.assignedSaName || 'Abdoel'} &bull; Target: {opp.targetCloseDate || 'Q4 2026'}
                           </p>
                         </div>
 

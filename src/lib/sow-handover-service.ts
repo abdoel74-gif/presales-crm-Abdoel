@@ -339,7 +339,7 @@ export const SowHandoverService = {
           },
         ],
         createdById: userProfile?.id || 'usr_sa_01',
-        createdByName: userProfile?.name || 'Adrian Pratama',
+        createdByName: userProfile?.name || 'Abdoel',
         createdAt: now,
         updatedAt: now,
       };
@@ -720,7 +720,7 @@ export const SowHandoverService = {
           probability: 'HIGH',
           mitigationStrategy: 'Establish dry-run simulation cutover drills 2 weeks prior to live cutover.',
           contingencyPlan: 'Allocate 2 back-to-back weekend cutover slots with on-site OEM vendor standby.',
-          owner: opportunity.assignedSaName || 'Adrian Pratama',
+          owner: opportunity.assignedSaName || 'Abdoel',
           status: 'OPEN',
         },
       ];
@@ -734,7 +734,7 @@ export const SowHandoverService = {
           fileSize: '4.8 MB',
           version: 'v1.0',
           uploadedAt: now,
-          uploadedBy: opportunity.assignedSaName || 'Adrian Pratama',
+          uploadedBy: opportunity.assignedSaName || 'Abdoel',
         },
         {
           id: `art_${Date.now()}_2`,
@@ -782,8 +782,8 @@ export const SowHandoverService = {
         assignedAeName: opportunity.assignedAeName || 'Rian Hidayat',
         assignedAeEmail: opportunity.assignedAeEmail || 'rian.hidayat@enterprise.com',
         assignedSaId: opportunity.assignedSaId || 'usr_sa_01',
-        assignedSaName: opportunity.assignedSaName || 'Adrian Pratama',
-        assignedSaEmail: opportunity.assignedSaEmail || 'adrian.pratama@enterprise.com',
+        assignedSaName: opportunity.assignedSaName || 'Abdoel',
+        assignedSaEmail: opportunity.assignedSaEmail || 'abdoel74@gmail.com',
         assignedPmId: pmProfile?.id || 'usr_pm_01',
         assignedPmName: pmProfile?.name || 'Reza Fahlevi, PMP',
         assignedPmEmail: pmProfile?.email || 'reza.fahlevi@enterprise.com',
@@ -809,7 +809,7 @@ export const SowHandoverService = {
         artifacts: initialArtifacts,
         saSignOff: {
           isSigned: true,
-          signedBy: opportunity.assignedSaName || 'Adrian Pratama',
+          signedBy: opportunity.assignedSaName || 'Abdoel',
           signedAt: now,
           comments: 'Architecture and sizing verified ready for delivery execution.',
         },
