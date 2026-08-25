@@ -9,6 +9,7 @@ import { Topbar } from './components/Topbar.tsx';
 import { DashboardView } from './components/DashboardView.tsx';
 import { NewRequestModal } from './components/NewRequestModal.tsx';
 import { WhatsAppDrawer } from './components/WhatsAppDrawer.tsx';
+import { WhatsAppGatewayView } from './components/WhatsAppGatewayView.tsx';
 import { ModulePlaceholder } from './components/ModulePlaceholder.tsx';
 import { AccessGuard } from './components/AccessGuard.tsx';
 import { AccountsView } from './components/AccountsView.tsx';
@@ -80,12 +81,17 @@ function MainAppContent() {
   };
 
   // Handle test WhatsApp dispatch
-  const handleSendTestNotification = (phone: string, text: string) => {
+  const handleSendTestNotification = (
+    phone: string,
+    text: string,
+    type: WhatsAppNotification['type'] = 'APPROVAL_REQUEST',
+    recipientName: string = 'Test Recipient'
+  ) => {
     const newAlert: WhatsAppNotification = {
       id: `wa_${Date.now()}`,
-      recipientName: 'Test Recipient',
+      recipientName,
       recipientPhone: phone,
-      type: 'APPROVAL_REQUEST',
+      type,
       messagePreview: text,
       timestamp: 'Just now',
       status: 'Delivered',
@@ -258,11 +264,11 @@ function MainAppContent() {
       case 'whatsapp-gateway':
         return (
           <AccessGuard module="whatsapp-gateway" onBackToDashboard={() => setActiveTab('dashboard')}>
-            <ModulePlaceholder
-              title="WhatsApp Gateway API & Webhook Dispatcher"
-              category="Integrations & Governance"
-              description="HMAC-SHA256 authenticated webhook receiver, automated approval buttons, and real-time stage change alerts."
-              stepNumber="Steps 49 - 50"
+            <WhatsAppGatewayView
+              notifications={waNotifications}
+              onSendNotification={(phone, text, type, recipientName) => {
+                handleSendTestNotification(phone, text, type, recipientName);
+              }}
               onBackToDashboard={() => setActiveTab('dashboard')}
             />
           </AccessGuard>

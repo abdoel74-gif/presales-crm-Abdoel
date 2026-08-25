@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, Radio, CheckCheck, RefreshCw, ShieldCheck, PhoneCall } from 'lucide-react';
+import { X, Send, Radio, CheckCheck, RefreshCw, ShieldCheck, ExternalLink } from 'lucide-react';
 import { WhatsAppNotification } from '../types.ts';
 
 interface WhatsAppDrawerProps {
@@ -15,16 +15,33 @@ export const WhatsAppDrawer: React.FC<WhatsAppDrawerProps> = ({
   notifications,
   onSendTestNotification,
 }) => {
-  const [testPhone, setTestPhone] = useState('+62 812-9900-1122');
-  const [testMessage, setTestMessage] = useState('🔔 [PRESALES ALERT] Sizing for Bank Mandiri has been completed. BOQ Ready.');
+  const [phone, setPhone] = useState('6281234567890');
+  const [message, setMessage] = useState('🔔 [PRESALES ALERT] Sizing for Bank Mandiri has been completed. BOQ Ready.');
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  const handleSend = (e: React.FormEvent) => {
+  const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!testPhone || !testMessage) return;
-    onSendTestNotification(testPhone, testMessage);
-    setTestMessage('');
+    if (!phone.trim() || !message.trim()) {
+      setStatus('⚠️ Nomor dan pesan tidak boleh kosong.');
+      return;
+    }
+
+    setLoading(true);
+    setStatus(null);
+
+    let cleanPhone = phone.replace(/[^0-9]/g, '');
+    if (cleanPhone.startsWith('0')) cleanPhone = '62' + cleanPhone.slice(1);
+    else if (cleanPhone.startsWith('8')) cleanPhone = '62' + cleanPhone;
+
+    setTimeout(() => {
+      onSendTestNotification(`+${cleanPhone}`, message);
+      setLoading(false);
+      setStatus(`✅ Pesan terkirim ke +${cleanPhone}`);
+      setMessage('');
+    }, 500);
   };
 
   return (
@@ -91,32 +108,54 @@ export const WhatsAppDrawer: React.FC<WhatsAppDrawerProps> = ({
           </div>
         </div>
 
-        {/* Interactive Test Dispatcher */}
+        {/* Interactive Test Dispatcher Form */}
         <div className="p-4 border-t border-slate-200 bg-slate-50">
-          <div className="text-xs font-bold text-slate-800 mb-2">Send WhatsApp Simulator Alert</div>
-          <form onSubmit={handleSend} className="space-y-2.5">
-            <input
-              type="text"
-              placeholder="Recipient Phone (+62...)"
-              value={testPhone}
-              onChange={(e) => setTestPhone(e.target.value)}
-              className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 font-mono"
-            />
-            <textarea
-              rows={2}
-              placeholder="Notification payload..."
-              value={testMessage}
-              onChange={(e) => setTestMessage(e.target.value)}
-              className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
-            />
+          <form onSubmit={handleSendMessage} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Nomor WhatsApp Tujuan (Format: 628xxx)
+              </label>
+              <input
+                type="text"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Contoh: 6281234567890"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-xs"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Isi Pesan / Notifikasi</label>
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Tulis pesan Anda di sini..."
+                rows={3}
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-xs"
+              />
+            </div>
+
             <button
               type="submit"
-              className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+              disabled={loading}
+              className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition duration-200 disabled:opacity-50 text-xs flex items-center justify-center gap-1.5"
             >
-              <Send className="w-3.5 h-3.5" />
-              <span>Simulate Webhook Trigger</span>
+              {loading ? (
+                <>
+                  <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                  <span>Mengirim...</span>
+                </>
+              ) : (
+                <span>Kirim Pesan WhatsApp Sekarang</span>
+              )}
             </button>
           </form>
+
+          {status && (
+            <div className="mt-3 p-2.5 bg-gray-100 rounded-lg text-xs text-gray-700 border border-gray-200">
+              {status}
+            </div>
+          )}
         </div>
       </div>
     </div>
